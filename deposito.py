@@ -1,4 +1,2 @@
-from main import saldo
-
-def deposito(valor):
+def deposito(valor, saldo):
 	return saldo + valor

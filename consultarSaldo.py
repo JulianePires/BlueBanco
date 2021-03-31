@@ -1,4 +1,2 @@
-from main import saldo
-
-def consultarSaldo():
+def consultarSaldo(saldo):
 	print(f"Seu saldo atual é {saldo}")

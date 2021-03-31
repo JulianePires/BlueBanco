@@ -1,29 +1,30 @@
-from main import dados
-
-def alterarDados():
+def alterarDados(dados):
+	
 	data = ""
-	while data != "Cancelar":
-		data = input("Escolha uma das opções: | Senha | Idade | Endereço | Cancelar")
-
-		if data != "Usuário" or data != "Senha" or data != "Idade" or data != "Endereço":
-			data = input("Opção Inválida! DEscolha uma das opções: Usuário | Idade | Endereço | Cancelar")
+	
+	while data != "Cancelar" and data != "cancelar":
 		
-		if data == "Usuario":
-			newUser = input("Digite um novo nome de usuário: ")
-			if newUser == "":
-				print("Usuário inválido")
+		data = input("Escolha uma das opções: | Senha | Idade | Endereço | Cancelar\n")
+
+		if data == "Usuario" or data == "usuario":
+			newUser = input("Digite um novo nome de usuário: \n")
+			while newUser == "":
+				print("Usuário inválido\n")
 			dados["usuario"] = newUser
 
-		if data == "Idade":
-			newAge = input("Digite uma nova idade: ")
-			if newAge <= 12 :
-				print("Idade incorreta")
+		elif data == "Idade" or data == "idade":
+			newAge = int(input("Digite uma nova idade: \n"))
+			while newAge <= 12 :
+				newAge = int(input("Idade incorreta! Digite uma nova idade: \n"))
 			dados["idade"] = newAge
 
-		if data == "Endereço":
+		elif data == "Endereço" or data == "endereco":
 			newAddress = input("Digite um novo endereço: ")
-			if newAddress == "":
+			while newAddress == "":
 				print("Endereço inválido")
 			dados["endereco"] = newAddress
 
-		print("Dados alterados com sucesso!")
+		elif data != "Cancelar" or data != "cancelar":
+			data = input("Opção Inválida! Escolha uma das opções: Usuário | Idade | Endereço | Cancelar\n")
+
+		print("Dados alterados com sucesso!\n")

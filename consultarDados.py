@@ -1,9 +1,9 @@
-from main import dados
-
-def consultarSaldo():
-	user = dados["username"]
+def consultarDados(dados):
+	
+	user = dados["usuario"]
 	age = dados["idade"]
 	address = dados["endereco"]
-	print(f"Username: {user}\n")
-	print(f"Username: {age}\n")
-	print(f"Username: {address}\n")
+	
+	print(f"Usuário: {user}\n")
+	print(f"Idade: {age}\n")
+	print(f"Endereço: {address}\n")
